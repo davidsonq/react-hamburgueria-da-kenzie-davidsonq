@@ -1,4 +1,4 @@
-export const Product = ({ product }) => {
+export const Product = ({ product, addCart }) => {
   return (
     <li>
       <figure>
@@ -12,7 +12,9 @@ export const Product = ({ product }) => {
           currency: "BRL",
         }).format(product.price)}
       </p>
-      <button type="button">Adicionar</button>
+      <button onClick={addCart} id={product.id} type="button">
+        Adicionar
+      </button>
     </li>
   );
 };
