@@ -6,33 +6,35 @@ export const CartProductS = styled.li`
   padding: 20px 0px 0px 15px;
   flex-direction: row;
   gap: 10px;
+  animation: cartTos 0.5s linear;
 
-  .animation__li2 {
-    animation: product 0.5s linear;
-  }
-  .animation__li {
-    animation: product2 0.5s linear;
-  }
-  @keyframes product {
+  @keyframes cartTos {
     0% {
       opacity: 0;
       transform: translateX(-50px);
     }
+    25% {
+      transform: translateX(10px);
+    }
+    50% {
+      opacity: 0.5;
+      transform: translateX(-10px);
+    }
     100% {
       opacity: 1;
-      transform: translateX(0px);
+      transform: translateX(0);
     }
   }
-  @keyframes product2 {
+  @keyframes cartTosReverse {
     0% {
-      opacity: 1;
-      transform: translateX(0px);
+      opacity: 0.5;
     }
+
     100% {
       opacity: 0;
-      transform: translateX(-50px);
     }
   }
+
   figure {
     width: 80px;
     height: 80px;

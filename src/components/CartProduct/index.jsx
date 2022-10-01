@@ -1,9 +1,8 @@
 import { CartProductS, ContainerCart } from "./styled";
 
-export const CartPorduct = ({ productCart, removeCart, getAnimation }) => {
-  console.log(getAnimation);
+export const CartPorduct = ({ productCart, removeCart, running }) => {
   return (
-    <CartProductS className={true ? "animation__li" : "animation__li2"}>
+    <CartProductS animation={running}>
       <figure>
         <img src={productCart.img} alt={`imagem ${productCart.name}`} />
       </figure>

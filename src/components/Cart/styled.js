@@ -3,6 +3,23 @@ export const CartS = styled.aside`
   max-width: 365px;
   width: 95%;
   margin: 16px auto;
+  animation: cartTo 1s linear;
+  @keyframes cartTo {
+    0% {
+      opacity: 0;
+      transform: translateX(50px);
+    }
+    25% {
+      opacity: 1;
+      transform: translateX(-10px);
+    }
+    50% {
+      transform: translateX(10px);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
   @media (min-width: 980px) {
     margin-right: 50px;
   }
@@ -23,6 +40,7 @@ export const CartS = styled.aside`
     background-color: var(--color-gray-0);
     max-height: 319px;
     overflow-y: auto;
+    overflow-x: hidden;
   }
 `;
 export const LiCart = styled.li`

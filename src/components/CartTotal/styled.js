@@ -4,11 +4,13 @@ export const CartTotalS = styled.div`
 
   margin: 0 auto 30px;
   background-color: var(--color-gray-0);
+
   div {
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 21px 15px 21px 5%;
+    animation: cartTo 0.5s linear;
 
     div {
       flex-direction: row;

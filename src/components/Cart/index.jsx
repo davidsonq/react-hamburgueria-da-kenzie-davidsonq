@@ -3,12 +3,7 @@ import { CartTotal } from "../CartTotal";
 import { CartS, LiCart } from "./styled";
 import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
-export const Cart = ({
-  productsCart,
-  setProductsCart,
-  getAnimation,
-  setGetAnimation,
-}) => {
+export const Cart = ({ productsCart, setProductsCart }) => {
   const MySwal = withReactContent(Swal);
   const removeCart = (e) => {
     const productsCopy = [...productsCart];
@@ -39,12 +34,9 @@ export const Cart = ({
       filterProducts[0].count = filterProducts[0].count - 1;
       setProductsCart([...productsCart]);
     } else {
-      setTimeout(() => {
-        setGetAnimation(true);
-        setProductsCart([
-          ...productsCopy.filter(({ id }) => id !== Number(e.target.id)),
-        ]);
-      }, 500);
+      setProductsCart([
+        ...productsCopy.filter(({ id }) => id !== Number(e.target.id)),
+      ]);
     }
   };
   const removeAll = (e) => {
@@ -85,7 +77,6 @@ export const Cart = ({
         ) : (
           productsCart.map((productCart) => (
             <CartPorduct
-              getAnimation={getAnimation}
               key={productCart.id}
               productCart={productCart}
               removeCart={removeCart}

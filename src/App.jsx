@@ -10,8 +10,9 @@ const App = () => {
   const [list, setList] = useState([]);
   const [backList, setBackList] = useState("");
   const [productsCart, setProductsCart] = useState([]);
+
   const MySwal = withReactContent(Swal);
-  const [getAnimation, setGetAnimation] = useState(false);
+
   useEffect(() => {
     instance
       .get()
@@ -77,7 +78,6 @@ const App = () => {
     });
 
     if (!products) {
-      setGetAnimation(false);
       filterProducts[0].count = 1;
       setProductsCart([...productsCart, ...filterProducts]);
     } else {
@@ -91,12 +91,7 @@ const App = () => {
       <Header setBackList={setBackList} />
       <main>
         <ProductList list={list} addCart={addCart} backList={backList} />
-        <Cart
-          getAnimation={getAnimation}
-          setGetAnimation={setGetAnimation}
-          productsCart={productsCart}
-          setProductsCart={setProductsCart}
-        />
+        <Cart productsCart={productsCart} setProductsCart={setProductsCart} />
       </main>
     </div>
   );
