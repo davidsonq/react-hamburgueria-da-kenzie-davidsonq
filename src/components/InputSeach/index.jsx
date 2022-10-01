@@ -1,6 +1,8 @@
+import { BsSearch } from "react-icons/bs";
+import { InputSeachS } from "./styled";
 export const InputSeach = ({ backList }) => {
   return (
-    <form
+    <InputSeachS
       onSubmit={(e) => {
         e.preventDefault();
       }}
@@ -11,7 +13,9 @@ export const InputSeach = ({ backList }) => {
         type="text"
         placeholder="Digitar Pesquisa"
       />
-      <label htmlFor="Seach"></label>
-    </form>
+      <label htmlFor="Seach">
+        <BsSearch id="Seach" />
+      </label>
+    </InputSeachS>
   );
 };

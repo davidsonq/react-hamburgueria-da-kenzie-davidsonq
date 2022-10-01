@@ -1,8 +1,9 @@
 import logo from "../../logo.svg";
+import { LogoS } from "./styled";
 export const Logo = () => {
   return (
-    <figure>
+    <LogoS>
       <img src={logo} alt="Imagem Logo" />
-    </figure>
+    </LogoS>
   );
 };

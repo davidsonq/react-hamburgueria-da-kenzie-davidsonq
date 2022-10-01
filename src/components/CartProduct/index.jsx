@@ -1,19 +1,22 @@
-export const CartPorduct = ({ productCart, removeCart }) => {
+import { CartProductS, ContainerCart } from "./styled";
+
+export const CartPorduct = ({ productCart, removeCart, getAnimation }) => {
+  console.log(getAnimation);
   return (
-    <li>
+    <CartProductS className={true ? "animation__li" : "animation__li2"}>
       <figure>
         <img src={productCart.img} alt={`imagem ${productCart.name}`} />
       </figure>
-      <div>
+      <ContainerCart>
         <div>
           <h2>{productCart.name}</h2>
           <button id={productCart.id} onClick={removeCart} type="button">
             Remover
           </button>
         </div>
-        <span>{`quantidade:${productCart.count}`}</span>
+        <span>{`Quantidade: ${productCart.count}`}</span>
         <span>{productCart.category}</span>
-      </div>
-    </li>
+      </ContainerCart>
+    </CartProductS>
   );
 };

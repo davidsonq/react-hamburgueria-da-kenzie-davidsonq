@@ -1,6 +1,8 @@
+import { ProductS } from "./styled";
+
 export const Product = ({ product, addCart }) => {
   return (
-    <li>
+    <ProductS>
       <figure>
         <img src={product.img} alt={`Imagem ${product.name}`} />
       </figure>
@@ -15,6 +17,6 @@ export const Product = ({ product, addCart }) => {
       <button onClick={addCart} id={product.id} type="button">
         Adicionar
       </button>
-    </li>
+    </ProductS>
   );
 };
